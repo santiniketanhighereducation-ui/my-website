@@ -3,1398 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>শিক্ষা দর্পণ | Shiksha Darpan with me - Content Creator, YouTuber & Education Blog</title>
-  <meta name="description" content="শিক্ষা দর্পণ (Shiksha Darpan with me) - শিক্ষক, শিক্ষাকর্মী ও ছাত্রছাত্রীদের নিরপেক্ষ ডিজিটাল সংবাদ পোর্টাল ও ইউটিউব চ্যানেল।" />
-  
-  <!-- Google Fonts for Bengali & Modern Tech Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700;800&family=Orbitron:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome 6 CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
+  <meta name="description" content="শিক্ষা দর্পণ with me — শিক্ষা, শেখা ও শিক্ষামূলক তথ্যের জন্য আপনার অনলাইন ঠিকানা। যোগাযোগ: +91 6295861193" />
+  <meta name="theme-color" content="#101a2d" />
+  <title>শিক্ষা দর্পণ with me | শিক্ষা ও শেখার নতুন দিশা</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* =========================================
-       CSS VARIABLES & THEME CONFIGURATION
-       ========================================= */
     :root {
-      --primary-accent: #FF0000;
-      --primary-hover: #cc0000;
-      --accent-glow: rgba(255, 0, 0, 0.35);
-      --bg-dark: #0a0a0c;
-      --bg-surface: #131318;
-      --bg-card: #1a1a22;
-      --bg-card-hover: #22222c;
-      --text-main: #ffffff;
-      --text-muted: #a1a1aa;
-      --text-body: #e4e4e7;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --glass-bg: rgba(15, 15, 20, 0.78);
-      --glass-border: rgba(255, 255, 255, 0.12);
-      --font-bn: 'Hind Siliguri', sans-serif;
-      --font-bn-serif: 'Noto Serif Bengali', serif;
-      --font-en: 'Poppins', sans-serif;
-      --font-tech: 'Orbitron', sans-serif;
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    /* =========================================
-       RESET & GLOBAL STYLES
-       ========================================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-bn);
-      line-height: 1.6;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 0, 0, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 85% 75%, rgba(255, 0, 0, 0.05) 0%, transparent 40%);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .section-padding {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-badge {
-      display: inline-block;
-      background: rgba(255, 0, 0, 0.12);
-      color: var(--primary-accent);
-      border: 1px solid rgba(255, 0, 0, 0.3);
-      padding: 5px 14px;
-      border-radius: 50px;
-      font-family: var(--font-en);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: var(--font-bn-serif);
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 800;
-      color: var(--text-main);
-    }
-
-    .section-title span {
-      color: var(--primary-accent);
-    }
-
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 650px;
-      margin: 10px auto 0;
-    }
-
-    /* =========================================
-       FIXED GLASS-MORPHISM NAVBAR
-       ========================================= */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: var(--glass-bg);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--glass-border);
-      transition: var(--transition);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 75px;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-icon {
-      width: 42px;
-      height: 42px;
-      background: var(--primary-accent);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      color: #fff;
-      box-shadow: 0 0 18px var(--accent-glow);
-      transition: var(--transition);
-    }
-
-    .brand-logo:hover .logo-icon {
-      transform: rotate(-6deg) scale(1.06);
-    }
-
-    .brand-text h2 {
-      font-family: var(--font-bn-serif);
-      font-size: 1.35rem;
-      font-weight: 800;
-      line-height: 1.1;
-      color: #fff;
-    }
-
-    .brand-text span {
-      font-family: var(--font-en);
-      font-size: 0.72rem;
-      color: var(--primary-accent);
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      font-family: var(--font-en);
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--text-body);
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary-accent);
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      background: var(--primary-accent);
-      color: #fff !important;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-weight: 600 !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px var(--accent-glow);
-    }
-
-    .nav-cta::after {
-      display: none !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-    }
-
-    /* Hamburger Menu Button */
-    .hamburger {
-      display: none;
-      background: transparent;
-      border: 1px solid var(--glass-border);
-      color: #fff;
-      font-size: 1.35rem;
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .hamburger:hover {
-      border-color: var(--primary-accent);
-      color: var(--primary-accent);
-    }
-
-    /* =========================================
-       90VH HERO SECTION
-       ========================================= */
-    .hero {
-      min-height: 90vh;
-      padding-top: 75px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    /* Subtle Tech Grid Overlay */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-      background-size: 45px 45px;
-      mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-      padding: 40px 0;
-    }
-
-    .live-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 0, 0, 0.14);
-      border: 1px solid rgba(255, 0, 0, 0.35);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #ffcccc;
-      margin-bottom: 20px;
-    }
-
-    .pulse-dot {
-      width: 9px;
-      height: 9px;
-      background: var(--primary-accent);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--primary-accent);
-      animation: pulse 1.6s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
-    }
-
-    .hero-title {
-      font-family: var(--font-bn-serif);
-      font-size: clamp(2.3rem, 4.8vw, 3.8rem);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .hero-en-sub {
-      font-family: var(--font-tech);
-      font-size: clamp(1rem, 2vw, 1.35rem);
-      color: var(--primary-accent);
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    .hero-desc {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      max-width: 600px;
-    }
-
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-family: var(--font-en);
-      font-weight: 600;
-      font-size: 0.96rem;
-      cursor: pointer;
-      transition: var(--transition);
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--primary-accent);
-      color: #fff;
-      box-shadow: 0 6px 24px var(--accent-glow);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-hover);
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
-    }
-
-    .btn-secondary {
-      background: var(--bg-card);
-      color: #fff;
-      border: 1px solid var(--glass-border);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--primary-accent);
-      background: rgba(255, 0, 0, 0.1);
-      transform: translateY(-3px);
-    }
-
-    /* Hero Visual Card */
-    .hero-card {
-      background: linear-gradient(145deg, #1b1b24, #111116);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 28px;
-      position: relative;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-      transition: var(--transition);
-    }
-
-    .hero-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 0, 0, 0.4);
-    }
-
-    .hero-card-banner {
-      position: relative;
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      aspect-ratio: 16 / 9;
-    }
-
-    .hero-card-banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .play-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .play-circle {
-      width: 60px;
-      height: 60px;
-      background: var(--primary-accent);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: #fff;
-      box-shadow: 0 0 25px var(--primary-accent);
-      transition: var(--transition);
-    }
-
-    .hero-card:hover .play-circle {
-      transform: scale(1.12);
-    }
-
-    .hero-card-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* =========================================
-       YOUTUBE AUTOMATIC VIDEO FEED SECTION
-       ========================================= */
-    .videos-section {
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .video-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-    }
-
-    .video-card:hover {
-      transform: translateY(-8px) scale(1.015);
-      border-color: var(--primary-accent);
-      box-shadow: 0 12px 30px rgba(255, 0, 0, 0.18);
-    }
-
-    .video-thumb-wrap {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .video-thumb-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .video-card:hover .video-thumb-wrap img {
-      transform: scale(1.07);
-    }
-
-    .yt-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0, 0, 0, 0.8);
-      color: var(--primary-accent);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      font-family: var(--font-en);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .video-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-
-    .video-date {
-      font-family: var(--font-en);
-      font-size: 0.8rem;
-      color: var(--primary-accent);
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .video-title {
-      font-size: 1.12rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 16px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .watch-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-en);
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-body);
-      padding-top: 12px;
-      border-top: 1px solid var(--border-color);
-      transition: var(--transition);
-    }
-
-    .video-card:hover .watch-link {
-      color: var(--primary-accent);
-    }
-
-    /* Loading & Error States for RSS Feed */
-    .feed-status {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 40px 20px;
-      background: var(--bg-card);
-      border-radius: 16px;
-      border: 1px dashed var(--glass-border);
-      color: var(--text-muted);
-    }
-
-    /* =========================================
-       FEATURED BLOG / SPECIAL REPORT SECTION
-       (Integrated from Previous Code)
-       ========================================= */
-    .blog-section {
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .article-wrapper {
-      max-width: 920px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 38px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
-    }
-
-    .article-tag {
-      display: inline-block;
-      background: rgba(255, 0, 0, 0.15);
-      color: #ff4d4d;
-      border: 1px solid rgba(255, 0, 0, 0.35);
-      padding: 5px 14px;
-      border-radius: 99px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .article-title {
-      font-family: var(--font-bn-serif);
-      font-size: clamp(1.55rem, 3vw, 2.15rem);
-      line-height: 1.38;
-      color: #ffffff;
-      margin-bottom: 14px;
-    }
-
-    .article-meta {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 16px;
-      margin-bottom: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .article-meta strong {
-      color: #fff;
-    }
-
-    .article-hero-img {
-      width: 100%;
-      max-height: 430px;
-      object-fit: cover;
-      border-radius: 14px;
-      margin-bottom: 26px;
-      border: 1px solid var(--border-color);
-    }
-
-    .article-body p {
-      margin-bottom: 18px;
-      text-align: justify;
-      line-height: 1.85;
-      font-size: 1.12rem;
-      color: var(--text-body);
-    }
-
-    .demands-box {
-      background: rgba(255, 0, 0, 0.05);
-      border-left: 4px solid var(--primary-accent);
-      padding: 26px;
-      border-radius: 14px;
-      margin: 30px 0;
-    }
-
-    .demands-box h3 {
-      margin-bottom: 18px;
-      color: #ff4d4d;
-      font-family: var(--font-bn-serif);
-      font-size: 1.35rem;
-    }
-
-    .demand-item {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 16px 20px;
-      margin-bottom: 12px;
-      transition: var(--transition);
-    }
-
-    .demand-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .demand-item:hover {
-      border-color: rgba(255, 0, 0, 0.45);
-      transform: translateX(5px);
-    }
-
-    .demand-item strong {
-      color: #ff4d4d;
-      font-size: 1.08rem;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .demand-item span {
-      color: var(--text-muted);
-      font-size: 0.98rem;
-      line-height: 1.65;
-    }
-
-    .closing-quote {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 0, 0, 0.3);
-      padding: 20px 24px;
-      border-radius: 14px;
-      font-style: italic;
-      font-weight: 600;
-      font-size: 1.08rem;
-      color: #f4f4f5;
-      line-height: 1.75;
-    }
-
-    /* =========================================
-       ABOUT SECTION WITH CHANNEL STATS
-       ========================================= */
-    .about-section {
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-text h3 {
-      font-family: var(--font-bn-serif);
-      font-size: 1.85rem;
-      margin-bottom: 16px;
-    }
-
-    .about-text p {
-      color: var(--text-muted);
-      font-size: 1.08rem;
-      margin-bottom: 18px;
-      line-height: 1.75;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 26px 20px;
-      border-radius: 16px;
-      text-align: center;
-      transition: var(--transition);
-    }
-
-    .stat-card:hover {
-      transform: translateY(-6px) scale(1.03);
-      border-color: var(--primary-accent);
-      box-shadow: 0 10px 25px rgba(255, 0, 0, 0.15);
-    }
-
-    .stat-icon {
-      font-size: 1.8rem;
-      color: var(--primary-accent);
-      margin-bottom: 10px;
-    }
-
-    .stat-number {
-      font-family: var(--font-tech);
-      font-size: 1.9rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    .stat-label {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* =========================================
-       STYLED CONTACT FORM SECTION
-       ========================================= */
-    .contact-wrapper {
-      max-width: 750px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group.full-width {
-      grid-column: 1 / -1;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-body);
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 14px 16px;
-      background: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      color: #fff;
-      font-family: var(--font-bn);
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary-accent);
-      box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
-    }
-
-    textarea.form-control {
-      resize: vertical;
-      min-height: 130px;
-    }
-
-    .form-feedback {
-      margin-top: 15px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      display: none;
-    }
-
-    .form-feedback.success {
-      display: block;
-      background: rgba(34, 197, 94, 0.15);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      color: #86efac;
-    }
-
-    /* =========================================
-       FOOTER WITH SOCIAL ICONS
-       ========================================= */
-    footer {
-      background: #060608;
-      border-top: 1px solid var(--border-color);
-      padding: 55px 0 30px;
-      text-align: center;
-    }
-
-    .footer-brand {
-      font-family: var(--font-bn-serif);
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .footer-brand span {
-      color: var(--primary-accent);
-    }
-
-    .footer-tagline {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-
-    .social-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.15rem;
-      color: #fff;
-      transition: var(--transition);
-    }
-
-    .social-icon:hover {
-      background: var(--primary-accent);
-      border-color: var(--primary-accent);
-      transform: translateY(-4px) scale(1.08);
-      box-shadow: 0 6px 18px var(--accent-glow);
-    }
-
-    .copyright {
-      border-top: 1px solid var(--border-color);
-      padding-top: 22px;
-      font-family: var(--font-en);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* =========================================
-       RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
-       ========================================= */
-    @media (max-width: 992px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-btns {
-        justify-content: center;
-      }
-
-      .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        background: rgba(12, 12, 16, 0.96);
-        backdrop-filter: blur(16px);
-        flex-direction: column;
-        padding: 25px 20px;
-        gap: 20px;
-        border-bottom: 1px solid var(--glass-border);
-        transform: translateY(-130%);
-        opacity: 0;
-        pointer-events: none;
-        transition: var(--transition);
-      }
-
-      .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .article-wrapper {
-        padding: 24px 18px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-wrapper {
-        padding: 28px 20px;
-      }
-    }
+      --navy: #101a2d;
+      --navy-soft: #17243b;
+      --blue: #2878f0;
+      --cyan: #45d6c5;
+      --ink: #15233a;
+      --muted: #64748b;
+      --paper: #f5f8fc;
+      --white: #fff;
+      --line: #e4eaf2;
+      --shadow: 0 18px 50px rgba(16, 26, 45, .1);
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hind Siliguri', sans-serif; color: var(--ink); background: var(--white); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(228,234,242,.85); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 700; }
+    .brand-mark { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 14px; color: white; font: 700 20px Poppins, sans-serif; background: linear-gradient(135deg, var(--blue), #5b9cff); box-shadow: 0 8px 20px rgba(40,120,240,.25); }
+    .brand-name { font-size: 1.12rem; line-height: 1.15; }
+    .brand-name small { display: block; color: var(--muted); font: 500 .68rem Poppins, sans-serif; letter-spacing: .03em; margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 30px; font-size: .98rem; font-weight: 600; }
+    .nav-links a:not(.nav-contact):hover { color: var(--blue); }
+    .nav-contact, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 11px; background: var(--blue); color: white; font-weight: 700; transition: transform .2s, background .2s, box-shadow .2s; }
+    .nav-contact { padding: 10px 17px; }
+    .nav-contact:hover, .button:hover { background: #1766da; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(40,120,240,.24); }
+    .menu-toggle { display: none; width: 43px; height: 43px; border: 1px solid var(--line); background: white; border-radius: 10px; color: var(--ink); font-size: 1.3rem; cursor: pointer; }
+    .hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 82% 18%, rgba(69,214,197,.17), transparent 32%), radial-gradient(ellipse at 8% 85%, rgba(40,120,240,.2), transparent 34%), var(--navy); color: white; }
+    .hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .13; background-image: linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(90deg, transparent, black); }
+    .hero-inner { position: relative; z-index: 1; min-height: 570px; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 54px; padding-block: 78px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border: 1px solid rgba(69,214,197,.38); border-radius: 99px; color: #a7fff3; background: rgba(69,214,197,.09); font-size: .9rem; font-weight: 600; }
+    .hero h1 { max-width: 700px; margin: 20px 0 16px; font-size: clamp(2.5rem, 5.3vw, 4.65rem); line-height: 1.16; font-weight: 700; }
+    .hero h1 span { color: var(--cyan); }
+    .hero-copy { max-width: 600px; color: #cbd5e1; font-size: 1.18rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .button { padding: 13px 20px; }
+    .button-outline { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 19px; border: 1px solid rgba(255,255,255,.3); border-radius: 11px; color: white; font-weight: 700; transition: background .2s; }
+    .button-outline:hover { background: rgba(255,255,255,.1); }
+    .hero-card { position: relative; padding: 30px; border: 1px solid rgba(255,255,255,.16); border-radius: 24px; background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.045)); box-shadow: 0 28px 70px rgba(0,0,0,.24); }
+    .hero-card-icon { width: 66px; height: 66px; display: grid; place-items: center; border-radius: 20px; color: var(--navy); background: var(--cyan); font-size: 1.85rem; margin-bottom: 23px; }
+    .hero-card h2 { font-size: 1.55rem; margin-bottom: 9px; }
+    .hero-card p { color: #cbd5e1; }
+    .hero-card-line { height: 1px; background: rgba(255,255,255,.15); margin: 24px 0; }
+    .hero-points { display: grid; gap: 12px; color: #e2e8f0; }
+    .hero-points span { display: flex; gap: 10px; align-items: center; }
+    .hero-points b { color: var(--cyan); font-family: Poppins, sans-serif; }
+    section { scroll-margin-top: 88px; }
+    .section { padding: 88px 0; }
+    .section-heading { max-width: 680px; text-align: center; margin: 0 auto 44px; }
+    .section-kicker { color: var(--blue); text-transform: uppercase; letter-spacing: .12em; font: 700 .78rem Poppins, sans-serif; }
+    .section-heading h2 { color: var(--navy); font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.25; margin: 10px 0; }
+    .section-heading p { color: var(--muted); font-size: 1.08rem; }
+    .topics { background: var(--paper); }
+    .topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .topic-card { min-height: 220px; padding: 27px; background: white; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 8px 24px rgba(16,26,45,.035); transition: transform .2s, box-shadow .2s; }
+    .topic-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .topic-icon { width: 51px; height: 51px; display: grid; place-items: center; border-radius: 15px; color: var(--blue); background: #eaf2ff; font-size: 1.35rem; margin-bottom: 17px; }
+    .topic-card h3 { color: var(--navy); font-size: 1.25rem; margin-bottom: 7px; }
+    .topic-card p { color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: center; }
+    .about-art { min-height: 340px; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 24px; background: linear-gradient(145deg, #dceaff, #e5fbf7); }
+    .about-art::before, .about-art::after { content: ''; position: absolute; border-radius: 50%; background: rgba(40,120,240,.1); }
+    .about-art::before { width: 240px; height: 240px; left: -60px; top: -60px; }
+    .about-art::after { width: 180px; height: 180px; right: -40px; bottom: -50px; background: rgba(69,214,197,.28); }
+    .book { position: relative; z-index: 1; width: 170px; height: 190px; display: grid; place-items: center; color: white; font-size: 4.2rem; background: linear-gradient(135deg, var(--blue), #174997); border-radius: 14px 22px 22px 14px; box-shadow: 15px 18px 32px rgba(16,26,45,.2); transform: rotate(-7deg); }
+    .about-copy h2 { color: var(--navy); font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1.25; margin: 8px 0 17px; }
+    .about-copy p { color: var(--muted); font-size: 1.08rem; margin-bottom: 14px; }
+    .about-label { color: var(--blue); font: 700 .78rem Poppins, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+    .contact { background: var(--navy); color: white; }
+    .contact .section-heading h2 { color: white; }
+    .contact .section-heading p { color: #cbd5e1; }
+    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 30px; border: 1px solid rgba(255,255,255,.15); border-radius: 20px; background: rgba(255,255,255,.06); }
+    .contact-panel h3 { font-size: 1.45rem; margin-bottom: 5px; }
+    .contact-panel p { color: #cbd5e1; }
+    .contact-phone { white-space: nowrap; font: 700 clamp(1.2rem, 3vw, 1.7rem) Poppins, sans-serif; color: var(--cyan); }
+    .contact-phone:hover { text-decoration: underline; }
+    footer { padding: 27px 0; background: #0b1322; color: #aab6c8; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: .92rem; }
+    .footer-inner a { color: white; }
+    @media (max-width: 800px) {
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 18px 20px 24px; flex-direction: column; align-items: stretch; gap: 15px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 15px 24px rgba(16,26,45,.08); }
+      .nav-links.open { display: flex; }
+      .nav-contact { justify-content: center; }
+      .hero-inner { grid-template-columns: 1fr; gap: 38px; min-height: auto; padding-block: 65px; }
+      .hero-card { max-width: 540px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-art { min-height: 280px; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 30px, 1120px); }
+      .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); }
+      .topic-grid { grid-template-columns: 1fr; }
+      .topic-card { min-height: auto; }
+      .section { padding: 66px 0; }
+      .contact-panel { align-items: flex-start; flex-direction: column; padding: 24px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
   </style>
 </head>
 <body>
-
-  <!-- =========================================
-       FIXED GLASS-MORPHISM NAVBAR
-       ========================================= -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="#home" class="brand-logo">
-        <div class="logo-icon">
-          <i class="fa-solid fa-play"></i>
-        </div>
-        <div class="brand-text">
-          <h2>শিক্ষা দর্পণ</h2>
-          <span>Shiksha Darpan with me</span>
-        </div>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="শিক্ষা দর্পণ with me হোম">
+        <span class="brand-mark" aria-hidden="true">শি</span>
+        <span class="brand-name">শিক্ষা দর্পণ<small>SHIKSHA DARPAN WITH ME</small></span>
       </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#videos">Latest Videos</a></li>
-        <li><a href="#blog">Special Report</a></li>
-        <li><a href="#about">About & Stats</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a href="https://www.youtube.com" target="_blank" rel="noopener" class="nav-cta">
-            <i class="fa-brands fa-youtube"></i> Subscribe
-          </a>
-        </li>
-      </ul>
-
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <button class="menu-toggle" type="button" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="navigation">☰</button>
+      <nav class="nav-links" id="navigation" aria-label="প্রধান মেনু">
+        <a href="#home">হোম</a>
+        <a href="#topics">আমাদের বিষয়</a>
+        <a href="#about">আমাদের সম্পর্কে</a>
+        <a class="nav-contact" href="#contact">যোগাযোগ <span aria-hidden="true">→</span></a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- =========================================
-       90VH HERO SECTION
-       ========================================= -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="live-pill">
-          <span class="pulse-dot"></span>
-          <span>শিক্ষক, শিক্ষাকর্মী ও ছাত্রছাত্রীদের ডিজিটাল কণ্ঠস্বর</span>
-        </div>
-        <h1 class="hero-title">শিক্ষা দর্পণ</h1>
-        <div class="hero-en-sub">Shiksha Darpan with me</div>
-        <p class="hero-desc">
-          পশ্চিমবঙ্গের উচ্চশিক্ষা, বি.এড ও ডি.এল.এড (BSAEU / WBBPE) আপডেট, শিক্ষক নিয়োগ সংবাদ এবং প্রামাণ্য শিক্ষামূলক বিশ্লেষণের বিশ্বস্ত ইউটিউব চ্যানেল ও নিউজ পোর্টাল।
-        </p>
-        <div class="hero-btns">
-          <a href="#videos" class="btn btn-primary">
-            <i class="fa-brands fa-youtube"></i> Watch Latest Videos
-          </a>
-          <a href="#blog" class="btn btn-secondary">
-            <i class="fa-solid fa-newspaper"></i> Read Special Report
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <a href="#blog" class="hero-card" style="display:block;">
-          <div class="hero-card-banner">
-            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80" alt="BSAEU B.Ed College News">
-            <div class="play-overlay">
-              <div class="play-circle">
-                <i class="fa-solid fa-bolt"></i>
-              </div>
-            </div>
-          </div>
-          <h3 style="font-family: var(--font-bn-serif); font-size: 1.2rem; margin-bottom: 10px; color: #fff;">
-            অনুমোদনহীনতায় বিশ বাঁও জলে দুই শতাধিক বি.এড কলেজের ভবিষ্যৎ
-          </h3>
-          <div class="hero-card-meta">
-            <span><i class="fa-regular fa-calendar"></i> ১১ই নভেম্বর, ২০২৬</span>
-            <span style="color: var(--primary-accent); font-weight: 600;">পড়ুন <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================
-       AUTOMATIC YOUTUBE VIDEO FEED (RSS2JSON)
-       ========================================= -->
-  <section class="videos-section section-padding" id="videos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge"><i class="fa-brands fa-youtube"></i> Live Channel Feed</span>
-        <h2 class="section-title">সাম্প্রতিক <span>ইউটিউব ভিডিও</span></h2>
-        <p class="section-subtitle">আমাদের অফিসিয়াল ইউটিউব চ্যানেল থেকে স্বয়ংক্রিয়ভাবে সংগৃহীত সর্বশেষ ৩টি ভিডিও আপডেট</p>
-      </div>
-
-      <div class="video-grid" id="youtube-feed-grid">
-        <!-- Populated dynamically via JS using rss2json API -->
-        <div class="feed-status">
-          <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--primary-accent); margin-bottom: 10px;"></i>
-          <p>সর্বশেষ ভিডিও লোড হচ্ছে...</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================
-       FEATURED SPECIAL REPORT (PREVIOUS CODE CONTENT)
-       ========================================= -->
-  <section class="blog-section section-padding" id="blog">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge"><i class="fa-solid fa-fire"></i> Featured Editorial</span>
-        <h2 class="section-title">বিশেষ <span>প্রতিবেদন ও ব্লগ</span></h2>
-      </div>
-
-      <article class="article-wrapper">
-        <span class="article-tag">বিশেষ প্রতিবেদন (Special Report)</span>
-        <h2 class="article-title">অনুমোদনহীনতায় বিশ বাঁও জলে দুই শতাধিক বি.এড কলেজের ভবিষ্যৎ, কাজ হারানোর আশঙ্কায় অসংখ্য শিক্ষক ও শিক্ষাকর্মী</h2>
-        
-        <div class="article-meta">
-          <span><i class="fa-solid fa-user-pen"></i> প্রতিবেদক: <strong>শিক্ষক ও শিক্ষাকর্মীবৃন্দের যৌথ প্রতিবেদন</strong></span>
-          <span><i class="fa-regular fa-calendar-days"></i> প্রকাশিত: <strong>১১ই নভেম্বর, ২০২৬</strong></span>
-        </div>
-
-        <img class="article-hero-img" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80" alt="অনুমোদনহীনতায় বিশ বাঁও জলে দুই শতাধিক বি.এড কলেজের ভবিষ্যৎ" />
-
-        <div class="article-body">
-          <p><strong style="color:#ff4d4d;">বিশেষ প্রতিবেদন: </strong>রাজ্যে আবারও নতুন করে কর্মহীন হওয়ার আশঙ্কায় দিন গুনছেন শত শত শিক্ষক ও শিক্ষাকর্মী। বাবা সাহেব আম্বেদকর এডুকেশন ইউনিভার্সিটির (BSAEU) অধীনস্থ বেসরকারি বি.এড কলেজগুলির অনুমোদন (Affiliation) ঘিরে তৈরি হওয়া জটিলতায় এই চরম অনিশ্চয়তা দেখা দিয়েছে।</p>
-          
-          <p>সম্প্রতি রাজ্যে বেসরকারি বি.এড কলেজগুলির নতুন শিক্ষাবর্ষের অনুমোদন এবং ভর্তি প্রক্রিয়া শুরু হয়েছে। বিশ্ববিদ্যালয়ের নিয়ম অনুযায়ী, তিন দফায় কলেজগুলি পরিদর্শনের পর তার রিপোর্টের ভিত্তিতেই এই অনুমোদন দেওয়া হয়। রাজ্যে এই বিশ্ববিদ্যালয়ের অধীনে ৬০০-র বেশি বেসরকারি বি.এড কলেজ রয়েছে। ইতিমধ্যে বিশ্ববিদ্যালয়ের গাইডলাইন মেনে বেশ কিছু কলেজ ছাড়পত্র পেলেও, এ বছর এখনও পর্যন্ত ২০৫টিরও বেশি বি.এড কলেজ অনুমোদন পায়নি।</p>
-          
-          <p>স্বাভাবিকভাবেই, চরম বিপাকে পড়েছেন এই অনুমোদনহীন কলেজগুলির সঙ্গে যুক্ত অধ্যাপক ও শিক্ষাকর্মীরা। নির্দিষ্ট সময়ের মধ্যে কলেজগুলি অনুমোদন না পেলে ২০২৬-২৭ শিক্ষাবর্ষে তারা নতুন কোনো ছাত্রছাত্রী ভর্তি করাতে পারবে না। আর গোটা একটি শিক্ষাবর্ষে ছাত্র ভর্তি বন্ধ থাকলে কলেজগুলির ঝাঁপ বন্ধ হওয়ার উপক্রম হবে। কেবল শিক্ষক বা শিক্ষাকর্মীরাই নন, এই কলেজগুলিকে কেন্দ্র করে প্রত্যক্ষ ও পরোক্ষভাবে আরও বহু মানুষের রুটিরুজি জড়িয়ে রয়েছে। কাজ হারালে পরিবার নিয়ে কীভাবে সংসার চলবে, সেই দুশ্চিন্তায় ঘুম উড়েছে সকলের।</p>
-          
-          <p>এই জটিল পরিস্থিতির মধ্যেই আগামী ১২ই নভেম্বর কলকাতা হাইকোর্টে সংশ্লিষ্ট বিষয়ে একটি মামলার শুনানি রয়েছে। এখন আদালতের সেই রায়ের দিকেই তাকিয়ে রয়েছেন ভুক্তভোগী শিক্ষক ও শিক্ষাকর্মীরা। পাশাপাশি, রাজ্য সরকার এবং বিশ্ববিদ্যালয় কর্তৃপক্ষের কাছে তাঁদের জীবিকা ও ভবিষ্যৎ রক্ষার্থে একাধিক আর্জি জানিয়েছেন তাঁরা:</p>
-        </div>
-
-        <div class="demands-box">
-          <h3>সরকার ও বিশ্ববিদ্যালয় কর্তৃপক্ষের (BSAEU) কাছে মূল দাবি ও প্রস্তাবনা:</h3>
-          
-          <div class="demand-item">
-            <strong>1. ত্রুটি সংশোধনের সুযোগ ও সময়দান:</strong>
-            <span>কলেজগুলির পরিকাঠামোগত বা নথিপত্র সংক্রান্ত কোনো ঘাটতি থাকলে, সরাসরি অনুমোদন বাতিল না করে তা পূরণের জন্য নির্দিষ্ট সময়সীমা বেঁধে শর্তসাপেক্ষে (Provisional) অনুমোদন দেওয়া হোক।</span>
-          </div>
-
-          <div class="demand-item">
-            <strong>2. পুনর্বিবেচনা ও পুনঃপরিদর্শন:</strong>
-            <span>যে সমস্ত কলেজ সামান্য কিছু কারিগরি ত্রুটির জন্য আটকে গেছে, সেগুলির ক্ষেত্রে মানবিক দৃষ্টিভঙ্গি নিয়ে পুনরায় পরিদর্শনের (Re-inspection) ব্যবস্থা করুক বিশ্ববিদ্যালয় কর্তৃপক্ষ।</span>
-          </div>
-
-          <div class="demand-item">
-            <strong>3. বিকল্প কর্মসংস্থানের ব্যবস্থা:</strong>
-            <span>কোনো কলেজ যদি চূড়ান্তভাবে নিয়ম না মানার কারণে বন্ধই হয়ে যায়, তবে সেখানে কর্মরত যোগ্য ও নির্দোষ শিক্ষক-শিক্ষাকর্মীদের যেন অনুমোদনপ্রাপ্ত অন্য কলেজগুলিতে স্থানান্তর বা অ্যাডজাস্ট (Adjust) করার সরকারি উদ্যোগ নেওয়া হয়।</span>
-          </div>
-
-          <div class="demand-item">
-            <strong>4. ত্রিপাক্ষিক বৈঠকের উদ্যোগ:</strong>
-            <span>আদালতের পাশাপাশি উচ্চশিক্ষা দপ্তর, বিশ্ববিদ্যালয় কর্তৃপক্ষ এবং কলেজ প্রতিনিধিদের নিয়ে একটি ত্রিপাক্ষিক বৈঠকের মাধ্যমে দ্রুত এই অচলাবস্থা কাটানোর ব্যবস্থা করা হোক।</span>
-          </div>
-
-          <div class="demand-item">
-            <strong>5. ছাত্রস্বার্থ ও শিক্ষাবর্ষ রক্ষা:</strong>
-            <span>এতগুলি কলেজে ভর্তি প্রক্রিয়া বন্ধ হলে রাজ্যে বি.এড পড়তে ইচ্ছুক বহু ছাত্রছাত্রীও আসন সংকটে পড়বেন। তাই ছাত্রছাত্রীদের ভবিষ্যৎ এবং শিক্ষাকর্মীদের পরিবারের কথা মাথায় রেখে মুখ্যমন্ত্রী ও শিক্ষামন্ত্রীর সরাসরি হস্তক্ষেপ দাবি করেছেন তাঁরা।</span>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow"><span aria-hidden="true">✦</span> শেখার পথে আপনার সঙ্গী</span>
+          <h1>শিক্ষার আলোয়<br /><span>এগিয়ে চলুন</span></h1>
+          <p class="hero-copy">শিক্ষা, শেখা ও দরকারি শিক্ষামূলক তথ্যকে সহজভাবে জানার জন্য স্বাগতম শিক্ষা দর্পণ with me-তে। জ্ঞান ভাগ করে নেওয়া এবং একসঙ্গে এগিয়ে যাওয়াই আমাদের লক্ষ্য।</p>
+          <div class="hero-actions">
+            <a class="button" href="#topics">আরও জানুন <span aria-hidden="true">→</span></a>
+            <a class="button-outline" href="tel:+916295861193"><span aria-hidden="true">☎</span> +91 6295861193</a>
           </div>
         </div>
-
-        <div class="closing-quote">
-          “ভুক্তভোগী শিক্ষক ও শিক্ষাকর্মীদের একটাই কাতর আবেদন—কলেজ কর্তৃপক্ষের কোনো গাফিলতি বা প্রশাসনিক জটিলতার বলি যেন সাধারণ কর্মীদের হতে না হয়। যে প্রতিষ্ঠানগুলি থেকে হাজার হাজার পরিবারের অন্ন সংস্থান হয়, সেগুলি বাঁচাতে সরকার ও বিশ্ববিদ্যালয় যেন সদর্থক ভূমিকা গ্রহণ করে।”
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- =========================================
-       ABOUT SECTION WITH CHANNEL STATS
-       ========================================= -->
-  <section class="about-section section-padding" id="about">
-    <div class="container about-grid">
-      <div class="about-text">
-        <span class="section-badge">About Creator</span>
-        <h3>শিক্ষার সঠিক দিশা ও নিরপেক্ষ তথ্যের বিশ্বস্ত ঠিকানা</h3>
-        <p>
-          <strong>শিক্ষা দর্পণ (Shiksha Darpan with me)</strong> হলো শিক্ষক প্রশিক্ষণ (B.Ed, D.El.Ed), বিশ্ববিদ্যালয় সংক্রান্ত নোটিশ, উচ্চশিক্ষা নীতি এবং শিক্ষক-শিক্ষাকর্মীদের ন্যায্য অধিকার নিয়ে কাজ করা একটি স্বাধীন ডিজিটাল প্ল্যাটফর্ম।
-        </p>
-        <p>
-          আমাদের লক্ষ্য হলো জটিল প্রশাসনিক নির্দেশিকা ও শিক্ষামূলক সংবাদ সহজ ভাষায় ভিডিও এবং প্রামাণ্য প্রতিবেদনের মাধ্যমে সকলের কাছে পৌঁছে দেওয়া।
-        </p>
-        <a href="#contact" class="btn btn-primary" style="margin-top: 10px;">
-          <i class="fa-solid fa-paper-plane"></i> যোগাযোগ করুন
-        </a>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-brands fa-youtube"></i></div>
-          <div class="stat-number">25K+</div>
-          <div class="stat-label">YouTube Subscribers</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-solid fa-eye"></i></div>
-          <div class="stat-number">1.5M+</div>
-          <div class="stat-label">Total Video Views</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-solid fa-video"></i></div>
-          <div class="stat-number">350+</div>
-          <div class="stat-label">Educational Videos</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-solid fa-newspaper"></i></div>
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Verified Edu News</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================
-       STYLED CONTACT FORM SECTION
-       ========================================= -->
-  <section class="contact-section section-padding" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Get In Touch</span>
-        <h2 class="section-title">আমাদের সাথে <span>যোগাযোগ করুন</span></h2>
-        <p class="section-subtitle">যেকোনো শিক্ষামূলক তথ্য, প্রতিবেদন প্রকাশ বা পরামর্শের জন্য নিচের ফর্মটি পূরণ করুন</p>
-      </div>
-
-      <div class="contact-wrapper">
-        <form id="contactForm">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="name">আপনার নাম (Full Name)</label>
-              <input type="text" id="name" class="form-control" placeholder="আপনার নাম লিখুন..." required />
-            </div>
-            <div class="form-group">
-              <label for="email">ইমেল ঠিকানা (Email Address)</label>
-              <input type="email" id="email" class="form-control" placeholder="example@email.com" required />
-            </div>
-            <div class="form-group full-width">
-              <label for="subject">বিষয় (Subject)</label>
-              <input type="text" id="subject" class="form-control" placeholder="যেমন: B.Ed কলেজ আপডেট / প্রতিবেদন সংক্রান্ত" required />
-            </div>
-            <div class="form-group full-width">
-              <label for="message">আপনার বার্তা (Message)</label>
-              <textarea id="message" class="form-control" placeholder="বিস্তারিত লিখুন..." required></textarea>
-            </div>
+        <aside class="hero-card" aria-label="শিক্ষা দর্পণ পরিচিতি">
+          <div class="hero-card-icon" aria-hidden="true">▤</div>
+          <h2>জ্ঞান হোক সহজ, শেখা হোক আনন্দের</h2>
+          <p>শিক্ষার্থী, শিক্ষক এবং শিক্ষা-আগ্রহী সবার জন্য একটি আন্তরিক শিক্ষামূলক ঠিকানা।</p>
+          <div class="hero-card-line"></div>
+          <div class="hero-points">
+            <span><b>✓</b> সহজ ও উপযোগী শিক্ষামূলক বিষয়</span>
+            <span><b>✓</b> শেখার আগ্রহকে উৎসাহিত করা</span>
+            <span><b>✓</b> সরাসরি যোগাযোগের সুযোগ</span>
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">
-            <i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান (Send Message)
-          </button>
-          <div id="formFeedback" class="form-feedback"></div>
-        </form>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =========================================
-       FOOTER WITH SOCIAL ICONS
-       ========================================= -->
+    <section class="section topics" id="topics">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">আমাদের বিষয়</span>
+          <h2>শেখার নানা দিক, এক ঠিকানায়</h2>
+          <p>আপনার শেখার যাত্রাকে সহায়তা করতে আমরা শিক্ষার সঙ্গে যুক্ত দরকারি বিষয়গুলো সহজভাবে তুলে ধরতে চাই।</p>
+        </div>
+        <div class="topic-grid">
+          <article class="topic-card">
+            <div class="topic-icon" aria-hidden="true">▣</div>
+            <h3>শিক্ষামূলক তথ্য</h3>
+            <p>পড়াশোনা ও শিক্ষা-সম্পর্কিত বিষয় সম্পর্কে জানুন সহজ ভাষায়।</p>
+          </article>
+          <article class="topic-card">
+            <div class="topic-icon" aria-hidden="true">✎</div>
+            <h3>শেখার সহায়তা</h3>
+            <p>নতুন কিছু শেখার আগ্রহ তৈরি করুন এবং জ্ঞানচর্চা চালিয়ে যান।</p>
+          </article>
+          <article class="topic-card">
+            <div class="topic-icon" aria-hidden="true">◎</div>
+            <h3>শিক্ষা-আলোচনা</h3>
+            <p>শিক্ষা নিয়ে ভাবনা, অভিজ্ঞতা ও প্রশ্ন ভাগ করে নেওয়ার একটি জায়গা।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-art" aria-hidden="true"><div class="book">▤</div></div>
+        <div class="about-copy">
+          <span class="about-label">আমাদের সম্পর্কে</span>
+          <h2>শিক্ষা সবার কাছে পৌঁছে দেওয়ার প্রত্যয়</h2>
+          <p>শিক্ষা দর্পণ with me একটি শিক্ষামূলক প্ল্যাটফর্ম। সহজভাবে শেখা, প্রয়োজনীয় তথ্য জানা এবং শিক্ষার প্রতি আগ্রহ বাড়ানোর উদ্দেশ্যে এই ওয়েবসাইট তৈরি করা হয়েছে।</p>
+          <p>আপনার মতামত বা কোনো প্রশ্ন থাকলে আমাদের সঙ্গে সরাসরি যোগাযোগ করুন।</p>
+          <a class="button" href="#contact">যোগাযোগ করুন <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker" style="color: var(--cyan)">যোগাযোগ</span>
+          <h2>আপনার সঙ্গে কথা বলতে চাই</h2>
+          <p>কোনো প্রশ্ন, পরামর্শ বা মতামত থাকলে ফোন করুন। আমরা আপনার কথা শুনতে আগ্রহী।</p>
+        </div>
+        <div class="contact-panel">
+          <div>
+            <h3>ফোনে যোগাযোগ</h3>
+            <p>সরাসরি কল করতে নিচের নম্বরে চাপ দিন।</p>
+          </div>
+          <a class="contact-phone" href="tel:+916295861193">+91 6295861193</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <div class="container">
-      <div class="footer-brand">শিক্ষা দর্পণ <span>(Shiksha Darpan with me)</span></div>
-      <p class="footer-tagline">শিক্ষক, শিক্ষাকর্মী ও ছাত্রছাত্রীদের নিরপেক্ষ ডিজিটাল সংবাদ পোর্টাল ও ইউটিউব চ্যানেল</p>
-      
-      <div class="social-links">
-        <a href="https://www.youtube.com" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://telegram.org" target="_blank" rel="noopener" class="social-icon" aria-label="Telegram">
-          <i class="fa-brands fa-telegram"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon" aria-label="X Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-      </div>
-
-      <div class="copyright">
-        &copy; 2026 শিক্ষা দর্পণ (Shiksha Darpan with me). All Rights Reserved.
-      </div>
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> শিক্ষা দর্পণ with me. সর্বস্বত্ব সংরক্ষিত।</span>
+      <a href="tel:+916295861193">যোগাযোগ: +91 6295861193</a>
     </div>
   </footer>
-
-  <!-- =========================================
-       VANILLA JAVASCRIPT (NAV, RSS FEED, FORM)
-       ========================================= -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Mobile Hamburger Menu Toggle
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      const navLinks = document.getElementById('navLinks');
-      const navItems = navLinks.querySelectorAll('a');
-
-      hamburgerBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = hamburgerBtn.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-          icon.classList.replace('fa-bars', 'fa-xmark');
-        } else {
-          icon.classList.replace('fa-xmark', 'fa-bars');
-        }
-      });
-
-      // Close mobile menu when clicking a link
-      navItems.forEach(item => {
-        item.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          hamburgerBtn.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
-        });
-      });
-
-      // 2. Automatic YouTube Video Feed via RSS2JSON API
-      // Replace 'UC_x5XG1OV2P6uZZ5FSM9Ttw' below with your actual 24-character YouTube Channel ID (starts with UC...)
-      const CHANNEL_ID = 'UC_x5XG1OV2P6uZZ5FSM9Ttw'; 
-      const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-      const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
-      const feedGrid = document.getElementById('youtube-feed-grid');
-
-      async function loadLatestVideos() {
-        try {
-          const response = await fetch(API_URL);
-          if (!response.ok) throw new Error('Network response was not ok');
-          const data = await response.json();
-
-          if (data.status === 'ok' && data.items && data.items.length > 0) {
-            const latestThree = data.items.slice(0, 3);
-            feedGrid.innerHTML = '';
-
-            latestThree.forEach(item => {
-              // Parse Video ID strictly from guid (format: "yt:video:VIDEO_ID")
-              let videoId = '';
-              if (item.guid && item.guid.includes(':')) {
-                const parts = item.guid.split(':');
-                videoId = parts[parts.length - 1];
-              } else if (item.link) {
-                const urlParams = new URLSearchParams(new URL(item.link).search);
-                videoId = urlParams.get('v') || '';
-              }
-
-              const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-              const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-              const pubDate = new Date(item.pubDate).toLocaleDateString('bn-BD', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              });
-
-              const card = document.createElement('a');
-              card.href = videoUrl;
-              card.target = '_blank';
-              card.rel = 'noopener noreferrer';
-              card.className = 'video-card';
-
-              card.innerHTML = `
-                <div class="video-thumb-wrap">
-                  <img src="${thumbnailUrl}" alt="${item.title}" loading="lazy" />
-                  <span class="yt-badge"><i class="fa-brands fa-youtube"></i> Watch</span>
-                </div>
-                <div class="video-content">
-                  <div>
-                    <div class="video-date"><i class="fa-regular fa-clock"></i> ${pubDate}</div>
-                    <h3 class="video-title">${item.title}</h3>
-                  </div>
-                  <div class="watch-link">
-                    <span>ইউটিউবে ভিডিওটি দেখুন</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </div>
-                </div>
-              `;
-
-              feedGrid.appendChild(card);
-            });
-          } else {
-            throw new Error('No videos returned from feed');
-          }
-        } catch (error) {
-          console.error('YouTube RSS Fetch Error:', error);
-          feedGrid.innerHTML = `
-            <div class="feed-status">
-              <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; color: var(--primary-accent); margin-bottom: 10px;"></i>
-              <p>ভিডিও ফিড লোড করা সম্ভব হয়নি। জাভাস্ক্রিপ্ট কোডে সঠিক <strong>CHANNEL_ID</strong> (UC...) বসানো আছে কিনা যাচাই করুন।</p>
-            </div>
-          `;
-        }
-      }
-
-      loadLatestVideos();
-
-      // 3. Contact Form Handling
-      const contactForm = document.getElementById('contactForm');
-      const formFeedback = document.getElementById('formFeedback');
-
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const userName = document.getElementById('name').value.trim();
-        
-        formFeedback.className = 'form-feedback success';
-        formFeedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> ধন্যবাদ <strong>${userName}</strong>! আপনার বার্তাটি সফলভাবে গৃহীত হয়েছে। আমরা শীঘ্রই যোগাযোগ করব।`;
-        
-        contactForm.reset();
-        setTimeout(() => {
-          formFeedback.style.display = 'none';
-        }, 6000);
-      });
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'মেনু বন্ধ করুন' : 'মেনু খুলুন');
+      menuButton.textContent = isOpen ? '×' : '☰';
     });
+    navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      navigation.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'মেনু খুলুন');
+      menuButton.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
